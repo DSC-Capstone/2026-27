@@ -1,6 +1,6 @@
 ---
 name: Zimo Wang
-role: Teaching Assistant
+role: ta
 email: zimowang@ucsd.edu
 pronouns: He/His/Him
 website: https://zeamoxwang.github.io/homepage/
