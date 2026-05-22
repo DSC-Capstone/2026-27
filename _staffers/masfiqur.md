@@ -1,6 +1,6 @@
 ---
 name: Masfiqur Rahaman
-role: Teaching Assistant
+role: ta
 email: marahaman@ucsd.edu
 pronouns: he/him
 website: https://masfiqur-rahaman.github.io/
