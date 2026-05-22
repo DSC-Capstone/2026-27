@@ -1,6 +1,6 @@
 ---
 name: Benjamin TenWolde
-role: Teaching Assistant
+role: ta
 email: betenwolde@ucsd.edu
 pronouns: He/Him
 website: https://www.linkedin.com/in/bentenwolde/
