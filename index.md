@@ -13,11 +13,11 @@ This site is under construction! -->
 {: .fs-6 .fw-300 }
 
 {: .green }
-**This is the student-facing course website for the 2025-26 offering of the capstone sequence. See [dsc-capstone.org](https://dsc-capstone.org) for more general information.**
+**This is the student-facing course website for the 2026-27 offering of the capstone sequence. See [dsc-capstone.org](https://dsc-capstone.org) for more general information.**
 
 ** Note: This schedule is subject to change. We expect this schedule to stabilize by end Sept for the Fall quarter and by mid-January for the Winter Quarter **
 
-
+<!--
 ### Winter 2026 Schedule
 <table>
     <colgroup>
@@ -169,5 +169,5 @@ This site is under construction! -->
         </tr>
     </tbody>
 </table>
-
+-->
 ---
