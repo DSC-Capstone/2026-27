@@ -1,6 +1,6 @@
 ---
 name: Can Chen
-role: Teaching Assistant
+role: ta
 email: cac024@ucsd.edu
 pronouns: she/her
 website: https://canchen-cc.github.io
