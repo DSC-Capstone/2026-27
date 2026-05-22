@@ -1,6 +1,6 @@
 ---
 name: Lucas Venetoulias
-role: Teaching Assistant
+role: ta
 email: lvenetoulias@ucsd.edu
 pronouns: he/him/his
 website: 
