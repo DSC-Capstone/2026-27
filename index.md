@@ -15,11 +15,10 @@ This site is under construction! -->
 {: .green }
 **This is the student-facing course website for the 2026-27 offering of the capstone sequence. See [dsc-capstone.org](https://dsc-capstone.org) for more general information.**
 
-<!--** Note: This schedule is subject to change. We expect this schedule to stabilize by end Sept for the Fall quarter and by mid-January for the Winter Quarter **
--->
+** Note: This schedule is subject to change. We expect this schedule to stabilize by mid Oct for the Fall quarter and by mid-January for the Winter Quarter **
 
-<!--
-### Winter 2026 Schedule
+
+<!--### Winter 2027 Schedule
 <table>
     <colgroup>
         <col style="width: 2%" />
@@ -28,13 +27,13 @@ This site is under construction! -->
     <thead class="header">
         <tr>
             <th>Week</th>
-            <th colspan=2>Tasks<br><span style="font-weight:normal">These are all in addition to <a href="https://dsc-capstone.org/2025-26/assignments/participation/q2">Weekly Participation Assignment</a>, which are due on Sundays at 11:59PM. All groups must fill these out, no matter what other requirements your mentors give you. </span></th>
+            <th colspan=2>Tasks<br><span style="font-weight:normal">These are all in addition to <a href="https://dsc-capstone.org/2026-27/assignments/participation/q2">Weekly Participation Assignment</a>, which are due on Sundays at 11:59PM. All groups must fill these out, no matter what other requirements your mentors give you. </span></th>
         </tr>
     </thead>
     <tbody> 
          <tr>
             <td>1</td>
-            <td>Read the <a href="https://dsc-capstone.org/2025-26/syllabus"> Syllabus </a> and <a href="https://dsc-capstone.org/2025-26/assignments/projects/q2"> Quarter 2 Project</a> specifications.<br>Start attending sections.<br>✅ <b style="color:green">Submit</b> your first Weekly Participation Assignment as a group by <b>Sunday, January 11th</b>; make sure to submit a PDF to Gradescope and, as a one time step, to share your Google Doc with us. <br><br> <a href="https://drive.google.com/file/d/15Qw_NU3C8KAakA-sTa0JPksv5zQqQvTC/view?usp=sharing"> Link to presentation used in class on Friday, January 9th.</a></td>
+            <td>Read the <a href="https://dsc-capstone.org/2026-27/syllabus"> Syllabus </a> and <a href="https://dsc-capstone.org/2026-27/assignments/projects/q2"> Quarter 2 Project</a> specifications.<br>Start attending mentor meetings. <br>✅ <b style="color:green">Submit</b> your first Weekly Participation Assignment as a group by <b>Sunday, January 11th</b>; make sure to submit a PDF to Gradescope and, as a one time step, to share your Google Doc with us. <br><br> <a href="https://drive.google.com/file/d/15Qw_NU3C8KAakA-sTa0JPksv5zQqQvTC/view?usp=sharing"> Link to presentation used in class on Friday, January 9th.</a></td>
         </tr>
         <tr>
             <td>2</td>
@@ -58,11 +57,11 @@ This site is under construction! -->
         </tr>
       <tr>
             <td>7</td>
-            <td>✅ <b style="color:green">Submit</b> your <a href="https://dsc-capstone.org/2025-26/assignments/projects/q2/website"> Website Checkpoint</a> by  <b>Sunday, February 22nd</b>. <br> ✅ Submit your poster draft in line with the <a href="https://dsc-capstone.org/2025-26/assignments/projects/q2/poster-presentation"> Poster Guidelines.</a> </td>
+            <td>✅ <b style="color:green">Submit</b> your <a href="https://dsc-capstone.org/2026-27/assignments/projects/q2/website"> Website Checkpoint</a> by  <b>Sunday, February 22nd</b>. <br> ✅ Submit your poster draft in line with the <a href="https://dsc-capstone.org/2026-27/assignments/projects/q2/poster-presentation"> Poster Guidelines.</a> </td>
         </tr>
         <tr>
             <td>8</td>
-            <td>Present a dry run of your <a href="https://dsc-capstone.org/2025-26/assignments/projects/q2/poster-presentation">Poster Presentation</a> to your TA as a group.<br><b><a href="https://dsc-capstone.org/showcase-26">RSVP for your block at the showcase.</a></b>  </td>
+            <td>Present a dry run of your <a href="https://dsc-capstone.org/2026-27/assignments/projects/q2/poster-presentation">Poster Presentation</a> to your TA as a group.<br><b><a href="https://dsc-capstone.org/showcase-26">RSVP for your block at the showcase.</a></b>  </td>
         </tr>
         <tr>
             <td>9</td>
@@ -74,7 +73,7 @@ This site is under construction! -->
         </tr> 
     </tbody> 
 </table> 
-
+-->
 
 
 ### Fall 2025 Schedule
@@ -98,11 +97,12 @@ This site is under construction! -->
     <tbody> 
         <tr>
             <td>1</td>
-            <td>Live on Monday, Sept 29: <a href="https://docs.google.com/presentation/d/1nYAwjFYJg07E3mmxIuebU8a2R3vsKRp9cF8KOavrLTo/edit?usp=sharing">Introduction</a><br>Read the <a href="https://dsc-capstone.org/2025-26/syllabus"> Syllabus</a> <br><a href="lessons/01a">AWS Fundamentals: S3 and EC2</a></td>
+            <td>Live on Monday, Sept 29: <a href="https://docs.google.com/presentation/d/1nYAwjFYJg07E3mmxIuebU8a2R3vsKRp9cF8KOavrLTo/edit?usp=sharing">Introduction</a><br>Read the <a href="https://dsc-capstone.org/2026-27/syllabus"> Syllabus</a> <br><a href="lessons/01a">AWS Fundamentals: S3 and EC2</a></td>
             <td></td>
             <td></td>
             <td></td>
         </tr>
+        <!--
         <tr>
             <td>1</td>
             <td><a href="lessons/01">Servers I: Accessing DSMLP</a></td>
@@ -142,7 +142,7 @@ This site is under construction! -->
         </tr>
         <tr>
             <td>6</td>
-            <td> <a href="https://dsc-capstone.org/2025-26/lessons/07/">Topics on Entrepreneurship</a></td>
+            <td> <a href="https://dsc-capstone.org/2026-27/lessons/07/">Topics on Entrepreneurship</a></td>
             <td></td>
             <td></td>
         </tr>
@@ -168,7 +168,7 @@ This site is under construction! -->
             <td>No lesson.</td>
             <td colspan=3><b><p style="color: red">Submit your Q1 project as well as the Q2 project proposal (By 11.59pm, Friday, Dec 5th)</p></b></td>
         </tr>
+        -->
     </tbody>
 </table>
--->
 ---
