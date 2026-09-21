@@ -1,4 +1,3 @@
-
 ---
 name: Nate Sheibley
 role: Teaching Assistant
