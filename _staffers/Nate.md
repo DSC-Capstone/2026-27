@@ -4,7 +4,7 @@ role: Teaching Assistant
 email: nsheibley@ucsd.edu
 pronouns: He/Him
 website: https://www.linkedin.com/in/nathan-sheibley/
-photo:
+photo: https://dsc-capstone.org/2026-27/assets/staff-images/Nate.JPG
 ohs: 1030-1130 Tu Zoom
 current: MS Student, Data Science & Physiological Research Scientist 
 education: BS Chemistry, University of British Columbia
