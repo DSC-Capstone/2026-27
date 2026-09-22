@@ -1,3 +1,4 @@
+---
 name: Amirhossein Panahi
 role: Teaching Assistant
 email: apanahi@ucsd.edu
@@ -9,3 +10,4 @@ current: PhD Student, Data Science
 research: Computer Vision, Image Processing, Machine learning, Deep Learning
 expertise: Diffusion Model, Video/image Generation Model
 askabout: Volleyball, Swimming, Pickleball
+---
