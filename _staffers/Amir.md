@@ -4,7 +4,7 @@ role: Teaching Assistant
 email: apanahi@ucsd.edu
 pronouns: He/Him
 website: www.linkedin.com/in/Panahi-Amirhossein/
-photo: #####
+photo: https://dsc-capstone.org/2026-27/assets/staff-images/amir.png
 ohs: Tuesdays 11.30am - 12.30am over Zoom (https://ucsd.zoom.us/j/9332742877) 
 current: PhD Student, Data Science
 research: Computer Vision, Image Processing, Machine learning, Deep Learning
