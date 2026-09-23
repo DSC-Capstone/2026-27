@@ -9,9 +9,7 @@ nav_exclude: true
 
 All lectures will be delivered as readings that you complete on your own time. Post questions on Piazza under the tag MA1. 
 
-Make sure to read this article before moving on to [Methodology Assignment 1](https://dsc-capstone.org/2025-26/assignments/methodology/01) (due Oct. 6)
-{: .red }
-Make sure to also complete the [Welcome Survey](https://forms.gle/FmsEstPNhck3d6A26) and submit it with Methodology Assignment 1!
+Make sure to read this article before moving on to [Methodology Assignment 1](https://dsc-capstone.org/2026-27/assignments/methodology/01)
 
 ---
 
@@ -119,7 +117,7 @@ The `-W DSC180A_FA25_A00` tells DSMLP that we'd like to use the DSC 180A workspa
 {: .green }
 There are a variety of flags that you can use with a launch script; we covered a few above (`-W`, `-c`, `-m`) but you aren't expected to memorize them all. Instead, if you use `-h` (e.g. `launch-scipy-ml.sh -h`), you'll see all of the possible launch options.
 
-Once you've run the launch script, you now have access to a computer with the resources mentioned above! Note that the server runs Linux, so all of the command-line commands you use should work on Linux (not necessarily Windows or macOS). See the [Command-Line Cheat Sheet](https://dsc-capstone.org/2025-26/command-line) for more tips.
+Once you've run the launch script, you now have access to a computer with the resources mentioned above! Note that the server runs Linux, so all of the command-line commands you use should work on Linux (not necessarily Windows or macOS). See the [Command-Line Cheat Sheet](https://dsc-capstone.org/2026-27/command-line) for more tips.
 
 <center><img src="assets/x0m7v.png" width="75%"></center>
 
