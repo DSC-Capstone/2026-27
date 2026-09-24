@@ -96,7 +96,7 @@ This site is under construction! -->
     </thead>
     <tbody> 
         <tr>
-            <td>1</td>
+            <td>0</td>
             <td>Live on Monday, Oct 5 (Subject to finding a venue): <a href="https://docs.google.com/presentation/d/1nYAwjFYJg07E3mmxIuebU8a2R3vsKRp9cF8KOavrLTo/edit?usp=sharing">Introduction</a><br>Read the <a href="https://dsc-capstone.org/2026-27/syllabus"> Syllabus</a> <br><a href="lessons/01a">AWS Fundamentals: S3 and EC2</a></td>
             <td></td>
             <td></td>
