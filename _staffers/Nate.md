@@ -3,6 +3,7 @@ name: Nate Sheibley
 role: Teaching Assistant
 email: nsheibley@ucsd.edu
 pronouns: He/Him
+domains: D03, D04, D07, D08, D13, D16, D17, D18, D19, D20, D40, D41
 website: https://www.linkedin.com/in/nathan-sheibley/
 photo: https://dsc-capstone.org/2026-27/assets/staff-images/Nate.JPG
 ohs: 1030-1130 Tu Zoom
