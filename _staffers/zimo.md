@@ -5,7 +5,7 @@ email: zimowang@ucsd.edu
 pronouns: He/His/Him
 website: https://zeamoxwang.github.io/homepage/
 photo: https://dsc-capstone.org/2026-27/assets/staff-images/zimo.jpeg
-ohs: Mon 9-10am, Fri 9-10am. HDSI 443 // https://ucsd.zoom.us/j/6946393883?pwd=MG1tUFNwWFo4K1FGNyszYjg3ZFVNZz09
+ohs: Wed 11am-12pm, Thu 11am-12pm. HDSI 445. In-person preferred unless otherwise announced. // https://ucsd.zoom.us/j/6946393883?pwd=MG1tUFNwWFo4K1FGNyszYjg3ZFVNZz09
 current: PhD Student, Data Science
 education: BS in GIS and Stats, Zhejiang University
 domains: TBD
@@ -15,3 +15,4 @@ expertise: Geometric Reconstruction
 askabout: Table tennis, stargazing
 foodemoji: Learning to enjoy fresh salad 🥬
 ---
+
