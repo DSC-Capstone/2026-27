@@ -106,7 +106,7 @@ This site is under construction! -->
             <td>1</td>
             <td><a href="lessons/01">Servers I: Accessing DSMLP</a></td>
             <td><a href="assignments/methodology/01">MA 1 (due Oct. 5th)</a></td>
-            <td></td>
+            <td>PA for Week 1 due on Sunday, Oct 4th</td>
             <td></td>
         </tr>
         <!--
