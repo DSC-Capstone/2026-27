@@ -102,14 +102,14 @@ This site is under construction! -->
             <td></td>
             <td></td>
         </tr>
-        <!--
         <tr>
             <td>1</td>
             <td><a href="lessons/01">Servers I: Accessing DSMLP</a></td>
-            <td><a href="assignments/methodology/01">MA 1 (due Oct. 6th)</a><br><a href="https://forms.gle/BdSANpB6bYtvrz47A">Welcome Survey (due Oct. 6)</a></td>
+            <td><a href="assignments/methodology/01">MA 1 (due Oct. 5th)</a></td>
             <td></td>
             <td></td>
         </tr>
+        <!--
         <tr>
             <td>2</td>
             <td><a href="lessons/02">Servers II: GPUs and Background Tasks</a></td>
