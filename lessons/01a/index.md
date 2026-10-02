@@ -42,7 +42,7 @@ Learn how to work with AWS cloud services by creating S3 buckets for storage and
 
 1.  Go to: [https://awsed.ucsd.edu/](https://awsed.ucsd.edu/). Login with your credentials if necessary
 
-2.  Select the course: [DSC180A_FA25_A00](https://awsed.ucsd.edu/courses/DSC180A_FA25_A00)
+2.  Select the course: [DSC180A_FA26_001](https://awsed.ucsd.edu/courses/DSC180A_FA26_001)
 
 3.  Select "Individual Login Page"
 
@@ -114,7 +114,7 @@ It is good practice to delete AWS resources because cloud resources cost money e
 
 1.  Go to: [https://awsed.ucsd.edu/](https://awsed.ucsd.edu/). Login with your credentials if necessary
 
-2.  Select the course: [DSC180A_FA25_A00](https://awsed.ucsd.edu/courses/DSC180A_FA25_A00)
+2.  Select the course: [DSC180A_FA26_001](https://awsed.ucsd.edu/courses/DSC180A_FA26_001)
 
 3.  Select "Individual Login Page"
 
