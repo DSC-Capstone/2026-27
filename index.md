@@ -113,7 +113,7 @@ This site is under construction! -->
             <td>2</td>
             <td><a href="lessons/02">Servers II: GPUs and Background Tasks</a></td>
             <td></td>
-            <td rowspan=9>As before, <a href="assignments/participation/q1">Participation</a> questions are due Sunday evening by 11.59pm<br><br>These are in addition to any tasks or readings your mentor assigned you. </td>
+            <td rowspan=9>As before, <a href="assignments/participation/q1">Participation</a> questions are due Sunday evening by 11.59pm<br><br>These are in addition to any tasks or readings your mentor assigned you.</td>
             <td></td>
         </tr>
         <!--
