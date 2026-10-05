@@ -109,7 +109,6 @@ This site is under construction! -->
             <td>PA for Week 1 due on Sunday, Oct 4th</td>
             <td></td>
         </tr>
-        <!--
         <tr>
             <td>2</td>
             <td><a href="lessons/02">Servers II: GPUs and Background Tasks</a></td>
@@ -117,6 +116,7 @@ This site is under construction! -->
             <td rowspan=9>As before, <a href="assignments/participation/q1">Participation</a> questions are due Sunday evening by 11.59pm<br><br>These are in addition to any tasks or readings your mentor assigned you. <br><br><b>You may skip submitting PAs for Weeks 9 and 10 because of Thanksgiving AND the need to finish up  the Q1 project and Q2 project proposals.</b> </td>
             <td></td>
         </tr>
+        <!--
         <tr>
             <td>3</td>
             <td><a href="lessons/03">Software Development for Data Science</a><br><small>Watch <a href="https://youtu.be/iXvBzLtI5Uk">this video</a> on command-line arguments in Python!</small></td>
