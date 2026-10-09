@@ -66,7 +66,7 @@ The subsections below describe how the course operates.
 Lectures are focused on methodological skills that can apply to all domains. In lectures, we will cover best practices with software engineering for data science and project management (see the [course homepage](../) for a full listing in Quarter 1). 
 
 Based on feedback from prior iterations of the capstone, we've decided to deliver methodology lectures as **lecture notes** that you read outside of class and discuss with course staff during synchronous sessions. Specifically:
-- Each Tuesday, we will post a "lesson" on the [course homepage](../). A lesson will contain all of the methodology content you need to learn for the week. **Read each lesson on your own.** (We will make an announcement when we release new lessons).
+- Each Monday, we will post a "lesson" on the [course homepage](../). A lesson will contain all of the methodology content you need to learn for the week. **Read each lesson on your own.** (We will make an announcement when we release new lessons).
 - Many methodology lessons will have an accompanying "methodology assignment", due the following Monday. See the [Assignments](#assignments-and-grades) section for more details.
 - The methodology TAs will hold office hours throughout the week to answer any questions with methodology content (or even your domain work, for that matter).
 
