@@ -91,7 +91,7 @@ There are two flavors of office hours:
 - **Methodology office hours**, held by the methodology (DSC 180A) course staff. Come to these office hours with questions on methodology lectures and assignments, and on how to apply methodology concepts to your domain work. See the [Office Hours](https://dsc-capstone.org/2026-27/office-hours) page on the course website for the schedule.
     - Note that different TAs have expertise in different areas; see the [Staff](https://dsc-capstone.org/2026-27/staff) page for a listing on each TA's area of expertise.
 - **Domain office hours**, held by your domain mentor. Come to these office hours with questions on the readings or tasks your mentor assigned you or on your projects. Your mentor will tell you when these are.
-    - You will be required to attend your mentor's office hours at least three times throughout the quarter.
+    - You will be required to attend your mentor's office hours at least three times throughout the quarter to get a good participation grade.
 
 ### Remark on How the Course is Split
 
