@@ -116,13 +116,13 @@ This site is under construction! -->
             <td rowspan=9>As before, <a href="assignments/participation/q1">Participation</a> questions are due Sunday evening by 11.59pm<br><br>These are in addition to any tasks or readings your mentor assigned you.</td>
             <td></td>
         </tr>
-        <!--
         <tr>
             <td>3</td>
             <td><a href="lessons/03">Software Development for Data Science</a><br><small>Watch <a href="https://youtu.be/iXvBzLtI5Uk">this video</a> on command-line arguments in Python!</small></td>
             <td></td>
             <td></td>
         </tr>
+        <!--
         <tr>
             <td>4</td>
             <td><a href="lessons/04">Effective Communication and Scientific Writing</a><br><small>featuring Prof. Benjamin Smarr</small></td>
