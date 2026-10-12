@@ -16,7 +16,7 @@ All lectures will be delivered as readings that you complete on your own time. P
 There is no Methodology Assignment associated with this lesson, but you'll need to follow the principles outlined here when writing the code for your Quarter 1 and Quarter 2 Projects, as **you'll need to be able to justify how your code is structured in order to receive full credit for their code components**.
 
 {: .red }
-**Remember, the [Quarter 1 Project Checkpoint](https://dsc-capstone.org/2025-26/assignments/projects/q1) is due on Monday, November 3rd. As part of your checkpoint, you'll need to submit the code you've written so far.**
+**Remember, the [Quarter 1 Project Checkpoint](https://dsc-capstone.org/2026-27/assignments/projects/q1) is due on Monday, November 2nd. As part of your checkpoint, you'll need to submit the code you've written so far.**
 
 ---
 
@@ -165,7 +165,7 @@ You should also think about <i>how</i> you're accessing your data – an API? sc
 
 <details><summary>Conclusions and Reports</summary>
 
-<p>The final reports that you create will be written in some sort of markup language, like Markdown, and will explain your results and contain justification for all of the design decisions you made. Your reports will likely involve tables and visualizations that are derived from data. You should try to set up your report such that it automatically generates tables and visualizations using the other components of your project, so that if, say, your data is updated, you can update your report just by re-running your entire pipeline. This, of course, is not possible if your report includes screenshots from other parts of your project; instead, you'll need to programmatically create, save, and load images.</p>
+<p>The final reports that you create will be written in some sort of markup language, such as Latex, and will explain your results and contain justification for all of the design decisions you made. Your reports will likely involve tables and visualizations that are derived from data. You should try to set up your report such that it automatically generates tables and visualizations using the other components of your project, so that if, say, your data is updated, you can update your report just by re-running your entire pipeline. This, of course, is not possible if your report includes screenshots from other parts of your project; instead, you'll need to programmatically create, save, and load images.</p>
 
 </details>
 
