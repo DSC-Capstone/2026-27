@@ -22,9 +22,9 @@ The purpose of the check-in is to ensure that all students in the capstone have 
 - Any concerns with your mentor or with group dynamics (e.g. someone not pulling their weight)?
 - Do you have any questions about what is expected of you?
 
-Check-ins will be done in groups of 4 and will last 20 minutes. Each 20 minute slot (or "block") should consist of students from the same domain. If you're working in a group of 4 already, then your entire group should sign up for the same "block". Otherwise, you should sign up for a block with other people in your domain. For instance, if there are 8 of you and you're all working individually, then 4 of you should sign up for one block and 4 should sign up for another; if there are 6 of you, you can split yourselves into 4 and 2 or 3 and 3. **Under no circumstance should there be students from different domains in the same block!** If you can't make any of your TA's slots, send an email to both them and me explaining your circumstances.
+Check-ins will be done in groups of 2-4 and will last 15-20 minutes. Each 20 minute slot (or "block") should consist of students from the same domain. If you're working in a group of 4 already, then your entire group should sign up for the same "block". Otherwise, you should sign up for a block with other people in your domain. For instance, if there are 8 of you and you're all working individually, then 4 of you should sign up for one block and 4 should sign up for another; if there are 6 of you, you can split yourselves into 4 and 2 or 3 and 3. **Under no circumstance should there be students from different domains in the same block!** 
 
 {: .green }
-**To sign up for a check-in, go to to [this sheet](#)**. Make sure to sign up for a check-in with the correct TA! All check-ins are held in-person in the HDSI building; locations can be found in the sheet OR will be announced by your TA.
+**To sign up for a check-in, go to to [this sheet](https://docs.google.com/spreadsheets/d/1STHpGUCltIgIPB5G8lev4T8yyZ7YPrksmQhLxun6t3s/edit?usp=sharing)**. Make sure to sign up for a check-in with the correct (your) TA! Logistics about the meeting will be informed by your TA. This checkin in mandatory and will impact the participation grade for the course. 
 
 
