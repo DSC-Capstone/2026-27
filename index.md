@@ -127,13 +127,13 @@ This site is under construction! -->
             <td><a href="lessons/04">Effective Communication and Scientific Writing</a><br><small>featuring Prof. Benjamin Smarr</small></td>
             <td><a href="assignments/methodology/02">MA 2 (due Oct. 26th)</a></td>
         </tr>
-        <!--
         <tr>
             <td>5</td>
-            <td><a href="lessons/06">Git</a></td>
-            <td><a href="assignments/methodology/04">MA 3 (due Nov. 3rd)</a></td>
+            <td><a href="lessons/06">Using Git</a></td>
+            <td><a href="assignments/methodology/04">MA 3 (due Nov. 2nd)</a></td>
             <td></td>
         </tr>
+        <!--
         <tr>
             <td>6</td>
             <td colspan=2><a href="assignments/methodology/05">LaTeX, Markdown, and GitHub Pages (MA 4 due Nov. 10th)</a></td>
