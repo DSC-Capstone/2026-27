@@ -136,7 +136,7 @@ This site is under construction! -->
         <tr>
             <td>6</td>
             <td colspan=2><a href="assignments/methodology/05">LaTeX, Markdown, and GitHub Pages (MA 4 due Nov. 9th)</a></td>
-            <td> The Q1 Project report checkpoint (<a href=https://www.gradescope.com/courses/1406963/assignments/8970420/">Report</a> and <a href="https://www.gradescope.com/courses/1406963/assignments/8970418">Code</a>) is due on <b></b>Friday, Nov 6th</td>b></td>
+            <td> The Q1 Project report checkpoint (<a href=https://www.gradescope.com/courses/1406963/assignments/8970420/">Report</a> and <a href="https://www.gradescope.com/courses/1406963/assignments/8970418">Code</a>) is due on <p style="font-weight: bold; color: red;">Friday, Nov 6th</p> </td>
             <td></td>
             <td></td>
         </tr>
