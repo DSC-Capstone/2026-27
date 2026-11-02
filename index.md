@@ -133,13 +133,13 @@ This site is under construction! -->
             <td><a href="assignments/methodology/04">MA 3 (due Nov. 2nd)</a></td>
             <td></td>
         </tr>
-        <!--
         <tr>
             <td>6</td>
-            <td colspan=2><a href="assignments/methodology/05">LaTeX, Markdown, and GitHub Pages (MA 4 due Nov. 10th)</a></td>
-            <td> The Q1 Project report checkpoint is due on Friday, Nov 7th</td>
+            <td colspan=2><a href="assignments/methodology/05">LaTeX, Markdown, and GitHub Pages (MA 4 due Nov. 9th)</a></td>
+            <td> The Q1 Project report checkpoint (report and code) is due on Friday, Nov 6th</td>
             <td></td>
         </tr>
+        <!--
         <tr>
             <td>6</td>
             <td> <a href="https://dsc-capstone.org/2026-27/lessons/07/">Topics on Entrepreneurship</a></td>
