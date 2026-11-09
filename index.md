@@ -142,7 +142,7 @@ This site is under construction! -->
         </tr>
         <tr>
             <td>7</td>
-            <td><a href="assignments/methodology/07/">Agentic Programming (MA 5 due Nov 16th)</a></td>
+            <td colspan=2><a href="assignments/methodology/07/">Agentic Programming (MA 5 due Nov 16th)</a></td>
             <td></td>
             <td></td>
         </tr>
