@@ -140,13 +140,13 @@ This site is under construction! -->
             <td></td>
             <td></td>
         </tr>
-        <!--
         <tr>
-            <td>6</td>
-            <td> <a href="https://dsc-capstone.org/2026-27/lessons/07/">Topics on Entrepreneurship</a></td>
+            <td>7</td>
+            <td><a href="assignments/methodology/07/">Agentic Programming (MA 5 due Nov 16th)</a></td>
             <td></td>
             <td></td>
         </tr>
+        <!--
         <tr>
             <td>7</td>
             <td colspan=2><a href="assignments/methodology/06">Environments and Containerization (MA 5 due Nov 17th)</a></td>
