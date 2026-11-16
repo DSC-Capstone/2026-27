@@ -10,16 +10,16 @@ What an agent does not know is what your result is supposed to mean. It stops wh
 
 This tutorial does two things. First it shows how to build an agent: giving it standing instructions, choosing which tools it can use, packaging a workflow it can repeat, adding a second agent to review its work, and writing your own agent in Python with the Agent SDK. Then it shows how to build checks into that agent, so it has to pass them before the work counts as done.
 
-You will do this on one example: forecasting daily bikeshare demand, from a dataset with a leakage trap in it. The checks are a test that fails if a leaked column reaches the model, a split that respects time order, and two baselines reported with every score. These are what let you defend the result in your report.
+You will do this on one example: forecasting daily bikeshare demand, from a dataset with a leakage bug in it. The checks are (a) a test that fails if a leaked column reaches the model, (b) a split that respects time order, and (c) two baselines reported with every score. These are what will let you defend the result in your report.
 
 The agent is Claude Code, the harness, driving an **open-weight model running on your own laptop** through Ollama. Nothing in this assignment needs an account, a subscription, or an API key, and nothing you type should leave your machine. 
 
 |  |  |
 | :---- | :---- |
-| **Running example** | Forecasting daily bikeshare demand — a small, time-series problem with a leakage trap built into the data. |
+| **Running example** | Forecasting daily bikeshare demand — a small, time-series problem with a leakage bug built into the data. |
 | **You will need** | Ollama, Claude Code (free to install; no login), Python 3.11+, a laptop with 16 GB of RAM, and about 10 GB of disk (7 GB of it the model). Setup commands are in Appendix A; a fallback for smaller machines is there too. |
 | **What you will build** | A working agentic repo with a verification loop, a hook, a subagent, a skill, and a batch auditor. |
-| **Starter code** | `bikeshare-starter.zip` — the reference repo from Steps 1–8, with generated outputs stripped. Work through the steps against it. |
+| **Starter code** | `bikeshare-open-starter.zip` — the reference repo to start with placeholders you will need to fill out. Work through the steps against it. |
 | **What you submit** | One git repository built on the starter: the starter as its first commit, plus the files listed under **What you submit** in Part 5: a `REPORT.md`, a new feature with its test, `docs/SEEDED_FAULTS.md`, `docs/AUDIT.md`, a skill of your own, and the committed metrics and audit output. |
 
 ## Lesson outline
@@ -69,11 +69,11 @@ Writing the code used to be the slow step. That constraint quietly enforced a lo
 
 We forecast daily bikeshare ridership in Washington, DC for 2011–2012 (Fanaee-T and Gama; the canonical copy lives at UCI). Each row is one day: weather, calendar context, and three count columns \- casual riders, registered riders, and cnt, the total.
 
-We do not use the UCI file directly. The pipeline downloads a processed mirror (the copy distributed with Molnar's *Interpretable Machine Learning*), and the mirror differs from UCI in ways that matter for this lesson: 728 rows starting 2011-01-03 rather than 731 from 2011-01-01, one day dropped in the middle, weather as text labels rather than codes 1–4, and two extra columns. `src/config.py` lists every difference. If you pull the UCI file yourself, Step 5 will not go the way this lesson says it does.
+We will not use the UCI file directly. The pipeline downloads a processed mirror (the copy distributed with Molnar's *Interpretable Machine Learning*), and the mirror differs from UCI in ways that matter for this lesson: 728 rows starting 2011-01-03 rather than 731 from 2011-01-01, one day dropped in the middle, weather as text labels rather than codes 1–4, and two extra columns. `src/config.py` lists every difference. If you pull the UCI file yourself, Step 5 will not go the way this lesson says it does.
 
-**The trap:** `casual + registered == cnt` exactly, on every row. A model handed those two columns achieves a perfect score by learning addition. It forecasts nothing, because at prediction time you would not know either input: they are components of the very quantity you are trying to predict.
+**The Bug:** `casual + registered == cnt` exactly, on every row. A model handed those two columns achieves a perfect score by learning addition. It forecasts nothing, because at prediction time you would not know either input: they are components of the very quantity you are trying to predict.
 
-A second, subtler problem sits underneath: ridership grew about 65% from 2011 to 2012\. Any honest evaluation must therefore predict a future that does not look like the past \- which turns out to matter more for model choice than anything about hyperparameters.
+A second, subtler problem sits underneath: ridership grew about 65% from 2011 to 2012. Any honest evaluation must therefore predict a future that does not look like the past which turns out to matter more for model choice than anything about hyperparameters.
 
 ### Where we end up
 
@@ -85,11 +85,10 @@ Four things in that chart worth calling out:
 
 1. **The perfect score is the invalid one.** R² \= 1.000 is not an achievement; it is the signature of leakage.  
 2. **The mean baseline scores −2.1.** Predicting the 2011 average for every day in late 2012 is much worse than useless, because the distribution moved. Without that number, \+0.58 is uninterpretable.  
-3. **Persistence scores \+0.51.** "Predict yesterday's count" is the baseline that can embarrass a model built on lagged demand, and it nearly does: ridge beats it by 0.07 R² and loses to it on MAE (947 vs 840 rides). That caveat belongs in the report, not in a footnote.  
+3. **Persistence scores \+0.51.** "Predict yesterday's count" is the baseline that can embarrass a model built on lagged demand, and it nearly does: ridge beats it by 0.07 R² and loses to it on MAE (947 vs 840 rides).  
 4. Gradient boosting loses to ridge though it still beats the mean baseline, so the two red bars are negative for different reasons. A tree cannot predict a value outside the range it saw in training, and more than half of the test days (56%) are above the 2011 maximum.
 
->   
-> **This is the shape of a good data science pipeline project finding.** Not "our model achieved R² \= 0.58" but "the naive evaluation gives 1.000 and is invalid; under a temporal split the mean baseline is strongly negative, a linear model reaches 0.58 against a persistence baseline of 0.51, and gradient boosting fails because it cannot extrapolate a growing trend." 
+**This is the shape of a good data science pipeline project finding.** Not "our model achieved R² \= 0.58" but "the naive evaluation gives 1.000 and is invalid; under a temporal split the mean baseline is strongly negative, a linear model reaches 0.58 against a persistence baseline of 0.51, and gradient boosting fails because it cannot extrapolate a growing trend." 
 
 ## Part 2 · The five primitives
 
