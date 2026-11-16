@@ -1,6 +1,9 @@
 ---
-
-## layout: page title: 🛠 Methodology lesson and methodology Assignment 7 description: Agentic Programming nav\_exclude: true
+layout: page
+title: 🛠 Methodology lesson and methodology Assignment 7
+description: Agentic Programming
+nav_exclude: true
+---
 
 # Agentic Programming (Lesson \+ Assignment)
 
