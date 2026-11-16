@@ -19,7 +19,7 @@ The agent is Claude Code, the harness, driving an **open-weight model running on
 | **Running example** | Forecasting daily bikeshare demand — a small, time-series problem with a leakage bug built into the data. |
 | **You will need** | Ollama, Claude Code (free to install; no login), Python 3.11+, a laptop with 16 GB of RAM, and about 10 GB of disk (7 GB of it the model). Setup commands are in Appendix A; a fallback for smaller machines is there too. |
 | **What you will build** | A working agentic repo with a verification loop, a hook, a subagent, a skill, and a batch auditor. |
-| **Starter code** | `bikeshare-open-starter.zip` — the reference repo to start with placeholders you will need to fill out. Work through the steps against it. |
+| **Starter code** | [starter zip file](assets/bikeshare-open-starter.zip) — the reference repo to start with placeholders you will need to fill out. Work through the steps against it. |
 | **What you submit** | One git repository built on the starter: the starter as its first commit, plus the files listed under **What you submit** in Part 5: a `REPORT.md`, a new feature with its test, `docs/SEEDED_FAULTS.md`, `docs/AUDIT.md`, a skill of your own, and the committed metrics and audit output. |
 
 ## Lesson outline
@@ -67,7 +67,7 @@ Writing the code used to be the slow step. That constraint quietly enforced a lo
 
 **The running example**
 
-We forecast daily bikeshare ridership in Washington, DC for 2011–2012 (Fanaee-T and Gama; the canonical copy lives at UCI). Each row is one day: weather, calendar context, and three count columns \- casual riders, registered riders, and cnt, the total.
+We forecast daily bikeshare ridership in Washington, DC for 2011–2012 (Fanaee-T and Gama; the canonical copy lives at UCI). Each row is one day: weather, calendar context, and three count columns - casual riders, registered riders, and cnt, the total.
 
 We will not use the UCI file directly. The pipeline downloads a processed mirror (the copy distributed with Molnar's *Interpretable Machine Learning*), and the mirror differs from UCI in ways that matter for this lesson: 728 rows starting 2011-01-03 rather than 731 from 2011-01-01, one day dropped in the middle, weather as text labels rather than codes 1–4, and two extra columns. `src/config.py` lists every difference. If you pull the UCI file yourself, Step 5 will not go the way this lesson says it does.
 
