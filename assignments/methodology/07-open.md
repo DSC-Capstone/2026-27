@@ -147,33 +147,27 @@ Create the project directory, initialise git, and start Claude Code in it. Then:
 
 /init
 
-This generates a starter CLAUDE.md. It will be generic, because the project is empty. Replace it with constraints the agent could not infer \- which, at this stage, means the constraints you already know from the data dictionary.
+This generates a starter CLAUDE.md. It will be generic, because the project is empty. Replace it with constraints the agent could not infer - which, at this stage, means the constraints you already know from the data dictionary.
 
 \# Bikeshare demand dataset
 
-Daily Capital Bikeshare counts, 2011-2012. We forecast \`cnt\` (total daily
-
-rides) from calendar, weather, and lagged-demand features.
+Daily Capital Bikeshare counts, 2011-2012. We forecast \`cnt\` (total daily rides) from calendar, weather, and lagged-demand features.
 
 \#\# Non-negotiable rules
 
 \- \*\*Never\*\* put \`casual\` or \`registered\` in a feature set:
 
-  \`casual \+ registered \== cnt\` exactly. \`src/config.py\` lists these and
-
-  the other excluded columns with the reason for each.
+  \`casual \+ registered \== cnt\` exactly. \`src/config.py\` lists these and the other excluded columns with the reason for each.
 
 \- \*\*Never\*\* split this data randomly. Use \`src.train.temporal\_split\`.
 
   Train \= 2011, valid \= H1 2012, test \= H2 2012\. Never tune on test.
 
-\- Report the mean baseline and the persistence baseline (yesterday's
+\- Report the mean baseline and the persistence baseline (yesterday's count) alongside every model score.
 
-  count) alongside every model score.
+The starter repo's `CLAUDE.md` is this plus a Commands section, a Style section, and a Gotchas section, about 40 lines.
 
-The starter repo's `CLAUDE.md` is this plus a Commands section, a Style section, and a Gotchas section — about 40 lines. That is roughly the ceiling.
-
-**Why is this the first step?** You are writing down what you know before the agent has a chance to guess. Everything in that file is a decision you made as the researcher; none of it is derivable from the code, because there is no code yet. Run `/context` to confirm it is loaded.
+**Why is this the first step?** You are writing down what you know before the agent has a chance to guess. Everything in that file is a decision you made as the researcher, none of it is derivable from the code, because there is no code yet. Run `/context` to confirm it is loaded.
 
 > **Keep it short.** A bloated CLAUDE.md is worse than a short one. For each line, ask: *would removing this cause a mistake? If not, cut it.* Domain knowledge that is only sometimes relevant belongs in a skill, which loads on demand.
 
@@ -181,10 +175,8 @@ The starter repo's `CLAUDE.md` is this plus a Commands section, a Style section,
 
 Enter plan mode (`Shift+Tab` until the status bar reads `plan mode on`, or start with `claude --permission-mode plan`). The agent can read and run read-only commands, but cannot edit.
 
-Download the daily bikeshare CSV from the URL in README.md into data/raw/.   
-Then characterise it for me: row count, date range, every column with its dtype and distinct values if categorical, and any missing dates in the calendar. Do not build features or models yet.
-
-Then tell me specifically: which columns could leak the target, and what would go wrong if I split this data randomly?
+`Download the daily bikeshare CSV from the URL in README.md into data/raw/.    Then characterise it for me: row count, date range, every column with its dtype and distinct values if categorical, and any missing dates in the calendar. Do not build features or models yet.
+Then tell me specifically: which columns could leak the target, and what would go wrong if I split this data randomly?`
 
 Read the answer carefully. This is the one moment in the session where the agent is doing research rather than production, and its output is an input to your judgement rather than a deliverable.
 
@@ -192,15 +184,15 @@ The facts it should find: 728 rows spanning 2011-01-03 to 2012-12-31; a weather 
 
 It will probably also flag `cnt_2d_bfr`. Ask it *why*. That column is the count from two days earlier: a quantity you would know at prediction time, so it is a lag feature, not leakage. We still exclude it, for a different reason: we did not build it, so we cannot test how it was aligned. The distinction matters, and an agent that lumps everything suspicious under "leakage" has not understood the problem. `src/config.py` keeps the three reasons for excluding a column in three separate sets.
 
-**Why this is separate from Step 3\.** Letting an agent jump to code produces code that solves the wrong problem, confidently. Plan mode is cheap insurance. Press `Ctrl+G` to open the plan in your editor and change it before approving. Remember, the plan is yours, not the agent's.
+**Why this is separate from Step 3.** Letting an agent jump to code produces code that solves the wrong problem, confidently. Plan mode is cheap insurance. Press `Ctrl+G` to open the plan in your editor and change it before approving. Remember, the plan is yours, not the agent's.
 
-> **Planning has a cost.** Do not use plan mode for a typo or a log line. It earns its keep when the approach is uncertain, the change spans several files, or you do not yet know the data. If you could describe the diff in one sentence, skip it.
+**Planning has a cost.** Do not use plan mode for a typo or a log line. It earns its keep when the approach is uncertain, the change spans several files, or you do not yet know the data. If you could describe the diff in one sentence, skip it.
 
 ### Step 3 · Ask naively, and get the answer you deserve
 
-Leave plan mode. Now ask the way a hurried student would ask, this is a deliberate demonstration, so type it exactly:
+Leave plan mode. Now ask the following:
 
-Build a model to predict cnt from the other columns. Report R-squared.
+`Build a model to predict cnt from the other columns. Report R-squared.`
 
 The agent will drop the target, use everything else, split the data, fit a model, and report something close to a perfect score. Ours reports:
 
@@ -210,13 +202,13 @@ Test R^2 \= 1.000000
 
 Your agent's exact feature list and script will differ, and a small model may stumble on the way there, a broken import, a random split, a scikit-learn call it half-remembers. Let it fix its own errors; the destination is the same. If after a few turns it has not produced a number, run `python -m src.leakage_demo` yourself: it is the same experiment, deterministic, and the lesson is in the number, not in who typed the script.
 
-**Stop here and sit with it.** Nothing went wrong mechanically. The agent did exactly what you asked, the code has no bugs, the score is real, but the result is worthless. There is no prompt phrasing that reliably prevents this, because the problem is not in the prompt,  it is that the correctness criterion existed only in your head.
+**Stop here for a moment** Nothing went wrong mechanically. The agent did exactly what you asked, the code has no bugs, the score is real, but the result is worthless. There is no prompt phrasing that reliably prevents this, because the problem is not in the prompt,  it is that the correctness criterion existed only in your head.
 
 **The reflex to build.** A result substantially better than you expected is a bug report until proven otherwise. In a capstone, the moment you see a number you would be thrilled to put in the report is the moment to go looking for the reason it is wrong. Train this reflex now; it is the most useful thing in this lesson.
 
 Ask the agent to explain its own result:
 
-Check whether any subset of the features you used is an exact linear combination of cnt. Show me the residual, not your reasoning.
+`Check whether any subset of the features you used is an exact linear combination of cnt. Show me the residual, not your reasoning.`
 
 It should find that casual \+ registered reproduces cnt to within floating-point error. If it reasons about column names instead of computing a residual, insist:   
 "Do not explain. Fit `cnt ~ casual + registered` with `numpy.linalg.lstsq` and print the maximum absolute residual." 
@@ -225,14 +217,13 @@ A small model will often tell you the answer rather than show it; the habit to b
 
 ### Step 4 · Turn the finding into a test
 
-This is the pivot of the whole lesson. A lesson the agent learned in conversation is gone when you clear the context. A lesson written as a test runs forever.
+This is the central point of the whole lesson. A lesson the agent learned in conversation is gone when you clear the context. A lesson written as a test runs forever.
 
-Write tests/test\_leakage.py. It must fail if any forbidden column reaches the feature set. Include a test that documents WHY: assert that casual \+ registered \== cnt on every row.
+`Write tests/test\_leakage.py. It must fail if any forbidden column reaches the feature set. Include a test that documents WHY: assert that casual \+ registered \== cnt on every row.`
 
-Also add src/config.py with a LEAKAGE\_COLS set as the single source of  
-truth, and have the feature builder derive its column list by excluding that set so the builder and the tests read the same definition.
+`Also add src/config.py with a LEAKAGE\_COLS set as the single source of truth, and have the feature builder derive its column list by excluding that set so the builder and the tests read the same definition.`
 
-Run the tests and show me the output. Do not build the model yet.
+`Run the tests and show me the output. Do not build the model yet.`
 
 The design instruction in the middle is the important one. One named constant feeds both the feature builder and the tests, so the two cannot drift apart. Be clear about what it does not buy you: a denylist admits a new column silently, because nobody thought to forbid it, while an allowlist drops one silently instead. Pick the failure you would rather have, and write it down. You are specifying a mechanism, not just an outcome.
 
@@ -242,19 +233,11 @@ The design instruction in the middle is the important one. One named constant fe
 
 LEAKAGE\_COLS \= {"casual", "registered", "cnt"}
 
-\# 2\. Time indexes: not leakage, but a bad bet. A tree splits on "after
-
-\#    date X" and predicts a flat constant for every future date; a linear
-
-\#    model extrapolates a two-year trend we have no reason to trust.
+\# 2\. Time indexes: not leakage, but a bad bet. A tree splits on "after date X" and predicts a flat constant for every future date; a linear model extrapolates a two-year trend we have no reason to trust.
 
 TIME\_INDEX\_COLS \= {"instant", "yr", "days\_since\_2011"}
 
-\# 3\. Unverified: a two-day lag that shipped with the mirror. Known at
-
-\#    prediction time, so not leakage \-- but we cannot test how it was
-
-\#    aligned, so we build our own lags and test those.
+\# 3\. Unverified: a two-day lag that shipped with the mirror. Known at prediction time, so not leakage \-- but we cannot test how it was aligned, so we build our own lags and test those.
 
 UNVERIFIED\_COLS \= {"cnt\_2d\_bfr"}
 
@@ -280,23 +263,14 @@ def test\_no\_forbidden\_features(feats):
 
     assert not (cols & FORBIDDEN), f"forbidden columns: {cols & FORBIDDEN}"
 
-Why the identity test earns its place. It documents the reason, so a teammate in week eight who wonders why two perfectly good columns are banned gets an answer. Be precise about what its neighbour does, though: `test_no_forbidden_features` asserts a property `feature_columns` already guarantees by construction, so it will never catch a new leaky column in the data. What it catches is someone editing `feature_columns` or `FORBIDDEN`, which is exactly the failure the hook in Step 7 demonstrates.
+Why the identity test needs to be there. It documents the reason, so a teammate in week nine who wonders why two perfectly good columns are banned gets an answer. Be precise about what its neighbour does, though: `test_no_forbidden_features` asserts a property `feature_columns` already guarantees by construction, so it will never catch a new leaky column in the data. What it catches is someone editing `feature_columns` or `FORBIDDEN`, which is exactly the failure the hook in Step 7 demonstrates.
 
 ### Step 5 · Rebuild features under the contract
 
 Now let the agent build the modelling table, with the tests in place as its stopping condition.
 
-Write src/features.py. Calendar features, a cyclical month encoding,
-
-an ordinal weather severity, and lagged demand: cnt\_lag\_1, cnt\_lag\_7,
-
-and a 7-day rolling mean.
-
-Constraints: every aggregation shifts before it aggregates, so no
-
-feature contains information from its own day. Run make test after
-
-each change and show me the failures before you fix them.
+`Write src/features.py. Calendar features, a cyclical month encoding, an ordinal weather severity, and lagged demand: cnt\_lag\_1, cnt\_lag\_7, and a 7-day rolling mean.
+Constraints: every aggregation shifts before it aggregates, so no feature contains information from its own day. Run make test after each change and show me the failures before you fix them.`
 
 **The last sentence matters.** "Show me the failures before you fix them" turns a silent self-correction loop into a visible one. You want to see what broke, because two of the breaks are real findings about the data.
 
@@ -362,53 +336,41 @@ Do the accounting rather than guessing the constant. The first seven days have n
 
 ### Step 6 · Split by time, and report the baseline
 
-Write src/train.py: split by date (train 2011, valid H1 2012, test
+`Write src/train.py: split by date (train 2011, valid H1 2012, test H2 2012), fit a mean baseline, a persistence baseline (predict cnt\_lag\_1), a standardised ridge, and a gradient booster, and write reports/metrics.json. Report valid and test R-squared and MAE for all four. Do not tune anything against the test set.`
 
-H2 2012), fit a mean baseline, a persistence baseline (predict
 
-cnt\_lag\_1), a standardised ridge, and a gradient booster, and write
-
-reports/metrics.json.
-
-Report valid and test R-squared and MAE for all four. Do not tune
-
-anything against the test set.
+> **Before you type this prompt.** `src/train.py` already exists in the starter. Delete it first (`git rm src/train.py`) so the agent writes it from the specification; you will compare its version against the original in the next commit. Two things to watch for, because a small model gets both wrong on the first try. There is no scikit-learn estimator for "predict yesterday's count," so the agent has to write a four-line class or a plain function for the persistence baseline — if it quietly substitutes `DummyRegressor` or drops the baseline, that is the thing to catch. And the prompt does not fix the layout of `reports/metrics.json`, so add this line to the prompt if you want a file the grader and the rest of the page can read:
+>
+> ```text
+> Use exactly this layout for reports/metrics.json:
+> {"baseline_mean": {"valid": {"r2": ..., "mae": ...}, "test": {...}},
+>  "baseline_persistence": {...}, "ridge": {...}, "hgb": {...}}
+> ```
+>
+> The two questions later in this step quote the numbers from our run (0.22, −0.50, 0.07). If your `hgb` row differs — it drifts by a few hundredths across scikit-learn versions — substitute your own numbers when you ask; the mechanism is the same.
 
 {
-
   "baseline\_mean":        {"valid": {"r2": \-0.9318, "mae": 2002.2}, "test": {"r2": \-2.1441, "mae": 2847.7}},
-
   "baseline\_persistence": {"valid": {"r2":  0.4507, "mae":  900.6}, "test": {"r2":  0.5099, "mae":  840.1}},
-
   "ridge":                {"valid": {"r2":  0.6475, "mae":  832.9}, "test": {"r2":  0.5833, "mae":  947.1}},
-
   "hgb":                  {"valid": {"r2":  0.2185, "mae": 1296.6}, "test": {"r2": \-0.4975, "mae": 1972.6}}
-
 }
 
 (These are the numbers with the versions pinned in `requirements.txt`. The ridge and baseline rows are stable across scikit-learn releases; the `hgb` row drifts by a few hundredths between versions, which is itself a small lesson about why deliverable 1 asks you to pin.)
 
 Now ask the question the numbers demand:
 
-Gradient boosting beats the mean baseline on both splits, but falls
-
-from 0.22 on validation to −0.50 on test, while ridge holds at 0.65
-
-and 0.58. Explain the mechanism, and show me the evidence — compare
-
-the range of cnt in train against test.
+`Gradient boosting beats the mean baseline on both splits, but falls from 0.22 on validation to −0.50 on test, while ridge holds at 0.65 and 0.58. Explain the mechanism, and show me the evidence — compare the range of cnt in train against test.`
 
 The answer is that a tree predicts by averaging training targets in a leaf, so it cannot produce a value above the maximum it has seen. The 2011 maximum is 6,043 rides; ridership grew 65%, and 56% of the test days are above that ceiling. Ridge extrapolates through its lag coefficients and survives. (Out-of-range targets do not explain the weak *validation* score \- H1 2012 is largely within range. Three hundred and forty-eight training rows and default boosting settings do. Ask the agent about that too; it will reach for the tidy explanation first.) The "show me the evidence" clause is doing real work with a small model: without it you will get a confident paragraph about trees and no numbers. Accept nothing here that is not a printed `min`/`max` of `cnt` per split.
 
 Then ask the question the agent will not volunteer:
 
-Ridge beats persistence by 0.07 R-squared on test and loses to it on MAE. Is ridge actually learning anything beyond "yesterday again"?
-
-Show me the ridge coefficients on the standardised features.
+`Ridge beats persistence by 0.07 R-squared on test and loses to it on MAE. Is ridge actually learning anything beyond "yesterday again"? Show me the ridge coefficients on the standardised features.`
 
 Persistence is the baseline that matters here, because ridge's inputs are dominated by lagged demand. It is in the table so that "0.58" is read as "0.07 better than doing nothing clever", which is the honest size of the result.
 
-**This is your headline result**, and you only have it because the baselines and the temporal split were in place before the modelling started. Reversed, model first, evaluate later.  This looks like a tuning problem and you spend a week on hyperparameters.
+**This is your main result**, and you only have it because the baselines and the temporal split were in place before the modeling started. Reversed, model first, evaluate later.  This looks like a tuning problem and you spend a lot of effort on hyperparameters.
 
 ### Step 7 · Make the guarantee structural
 
@@ -419,49 +381,29 @@ Write a PostToolUse hook that re-runs tests/test\_leakage.py whenever a file und
 Read the hook input from stdin as JSON \-- CLAUDE\_FILE\_PATHS is not a real environment variable. Then test the hook three ways: a src edit with tests passing, a non-src edit, and a src edit with the guard deliberately broken.
 
 {
-
   "model": "bikeshare-coder",
-
   "env": {
-
     "ANTHROPIC\_BASE\_URL": "http\://localhost:11434",
-
     "ANTHROPIC\_AUTH\_TOKEN": "ollama",
-
     "ANTHROPIC\_API\_KEY": ""
-
   },
 
   "hooks": {
-
     "PostToolUse": \[{
-
       "matcher": "Edit\|Write",
-
       "hooks": \[{
-
         "type": "command",
-
         "command": "\${CLAUDE\_PROJECT\_DIR}/.claude/hooks/check\_leakage.sh",
-
         "timeout": 60,
-
         "statusMessage": "Re-running leakage tests..."
-
       }\]
-
     }\]
-
   },
 
   "permissions": {
-
     "allow": \["Bash(make:\*)", "Bash(python \-m pytest:\*)"\],
-
     "deny": \["Write(./data/raw/\*\*)", "Edit(./data/raw/\*\*)", "Bash(rm \-rf:\*)"\]
-
   }
-
 }
 
 The `model` and `env` keys at the top are what point the harness at your local Ollama server; they were there from Step 1, and they are why `claude` never asked you to log in. Everything below them is Step 7\.
@@ -572,173 +514,102 @@ Deciding whether three float columns sum to a fourth is not a judgement call, it
 from claude\_agent\_sdk import tool, create\_sdk\_mcp\_server
 
 @tool("check\_identity",
-
       "Test whether any subset of candidate columns is an exact linear "
-
       "restatement of the target. Returns the offending subsets.",
-
       {"csv\_path": str, "target": str, "candidates": list})
 
 async def check\_identity(args):
-
     df \= pd.read\_csv(args\["csv\_path"\])
-
     cols \= \[c for c in args\["candidates"\]
-
             if c in df.columns and c \!= args\["target"\]\]
-
     hits \= \[\]
-
     for r in (1, 2, 3):
-
         for subset in combinations(cols, r):
-
             block \= df\[list(subset) \+ \[args\["target"\]\]\].dropna()
-
             \# Intercept column, so cnt \= a\*x \+ b is caught as well as
-
             \# cnt \= casual \+ registered. lstsq on NaN returns garbage
-
             \# rather than raising, hence the dropna.
-
             X \= np.column\_stack(\[block\[list(subset)\].to\_numpy(dtype=float),
-
                                  np.ones(len(block))\])
-
             y \= block\[args\["target"\]\].to\_numpy(dtype=float)
-
             coef, \*\_ \= np.linalg.lstsq(X, y, rcond=None)
-
             resid \= float(np.abs(X @ coef \- y).max())
-
             if resid \< 1e-6:
-
                 hits.append({"columns": list(subset), "max\_residual": resid})
-
     verdict \= "LEAKAGE" if hits else "clean"
-
     return {"content": \[{"type": "text",
-
             "text": json.dumps({"verdict": verdict, "identities": hits})}\]}
 
 auditor\_tools \= create\_sdk\_mcp\_server(
-
     name="audit", version="1.0.0", tools=\[check\_identity\])
 
 Run against our own data, it returns exactly what it should:
 
 {"verdict": "LEAKAGE",
-
  "identities": \[{"columns": \["casual", "registered"\],
-
                  "max\_residual": 1.8e-12}, ...\]}
 
 ### The loop
 
 REPORT\_SCHEMA \= {            \# the JSON the auditor must return; full version in agent/audit.py
-
     "type": "object",
-
     "properties": {
-
         "leakage": {"type": "string", "enum": \["none", "suspected", "confirmed"\]},
-
         "temporal\_ok": {"type": "boolean"},
-
         "baseline\_reported": {"type": "boolean"},
-
         "reproducible": {"type": "boolean"},
-
         "findings": {"type": "array", "items": {...}},
-
         "confidence": {"type": "string", "enum": \["low", "medium", "high"\]},
-
     },
-
     "required": \[...\],
-
 }
 
 async def audit\_repo(repo: Path) \-\> dict:
-
     options \= ClaudeAgentOptions(
-
         system\_prompt=SYSTEM,          \# the four checks
-
         cwd=str(repo),
-
         mcp\_servers={"audit": auditor\_tools},
-
         allowed\_tools=\["Read", "Grep", "Glob", "Bash",
-
                        "mcp\_\_audit\_\_check\_identity"\],
-
         permission\_mode="default",     \# anything not in allowed\_tools is denied
-
         max\_turns=40,
-
         model=os.environ.get("AUDIT\_MODEL", "bikeshare-coder"),
-
         output\_format={"type": "json\_schema", "schema": REPORT\_SCHEMA},
-
     )
-
     final \= None
-
     async for message in query(prompt=f"Audit the repo at {repo}.",
-
                                options=options):
-
         if isinstance(message, ResultMessage):
-
             final \= message            \# only the last message is the answer
-
     if final is None or final.is\_error:
-
         return {"repo": repo.name, "error": "run\_failed"}
-
     if final.structured\_output is not None:
-
         return {"repo": repo.name, \*\*final.structured\_output}
-
     try:                               \# fallback if schema enforcement is unavailable
-
         return {"repo": repo.name, \*\*json.loads((final.result or "").strip())}
-
     except json.JSONDecodeError:
-
         \# Never let one malformed reply kill a 40-repo run.
-
         return {"repo": repo.name, "error": "unparseable", "raw": (final.result or "")\[:500\]}
-
+        
 Two things in that loop are easy to get wrong. Only the `ResultMessage` carries the final answer; concatenating every intermediate `TextBlock` ("Let me look at config.py first...") and `json.loads`\-ing the lot fails on the first repo where the agent thinks out loud. And `output_format` with a JSON schema is a contract the SDK enforces, which "reply with only JSON" in the prompt is not,  keep the `try` anyway, because a contract can still be broken by an error. With a small local model the fallback is not theoretical: expect some fraction of runs to land in the `except`, and expect the batch to be slow, forty repos at four concurrent on one laptop is forty sequential-ish runs of a 9B model. For the assignment you run it against one repo, your own. The concurrency and the error handling are there so that the same script works unchanged when a TA runs it against the class on a machine with a bigger model.
 
 Then bound the concurrency and write one JSON object per line, so the output is a dataframe:
 
 sem \= asyncio.Semaphore(args.concurrency)   \# args from argparse; default 4
-
 async def bounded(repo):
-
     async with sem:
-
         return await audit\_repo(repo)
-
 results \= await asyncio.gather(\*(bounded(r) for r in args.repos))
-
 with args.out.open("w") as fh:
-
     for row in results:
-
         fh.write(json.dumps(row) \+ "\\n")
-
 ### Three things that separate a working batch agent from a demo
 
 1. **Constrain the output with a schema, then parse defensively anyway.** `output_format` makes the shape a contract. The `try` around the fallback is for the runs where the contract could not be honoured. One failed reply must not lose the other thirty-nine results.  
 2. **Scope the tools.** allowed\_tools is a security boundary, not a hint. An auditor needs to read and run; it never needs to write, so do not hand it a permission mode that could grant edits. Remember that `Bash` is on the list: the auditor runs student code. Run it somewhere you would be happy for student code to run.  
 3. **Bound the concurrency.** A semaphore around gather keeps you inside rate limits and makes the run reproducible enough to debug.
-
 >   
-> **The honest limitation.** A batch auditor is a screening instrument, not a verdict. It reliably surfaces exact identities, random splits, and missing baselines. It will not tell you whether the research question was worth asking. Use it to decide where to spend your attention, never to replace it.
+> **The  limitation.** A batch auditor is a screening instrument, not a verdict. It reliably surfaces exact identities, random splits, and missing baselines. It will not tell you whether the research question was worth asking. Use it to decide where to spend your attention, never to replace it.
 
 ## Part 5 · What this means for your assignment
 
