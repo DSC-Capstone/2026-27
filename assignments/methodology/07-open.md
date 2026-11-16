@@ -82,7 +82,7 @@ A second, subtler problem sits underneath: ridership grew about 65% from 2011 to
 
 This is the result the tutorial produces. Read it before you start, so you know what you are working toward.
 
-![Test-set R-squared by model](./assets/model_comparison.png)
+![Test-set R-squared by model](./model_comparison.png)
 
 Test-set R² in the second half of 2012, after training in 2011: the leaky demo from Step 3, plus the two baselines and two models in reports/metrics.json, produced by **make all**. R² is computed against the test-period mean, so 0 means "as good as a constant nobody could have known in advance".
 
