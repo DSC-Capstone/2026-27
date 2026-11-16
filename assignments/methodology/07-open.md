@@ -19,7 +19,7 @@ The agent is Claude Code, the harness, driving an **open-weight model running on
 | **Running example** | Forecasting daily bikeshare demand — a small, time-series problem with a leakage bug built into the data. |
 | **You will need** | Ollama, Claude Code (free to install; no login), Python 3.11+, a laptop with 16 GB of RAM, and about 10 GB of disk (7 GB of it the model). Setup commands are in Appendix A; a fallback for smaller machines is there too. |
 | **What you will build** | A working agentic repo with a verification loop, a hook, a subagent, a skill, and a batch auditor. |
-| **Starter code** | [starter zip file](assets/bikeshare-open-starter.zip) — the reference repo to start with placeholders you will need to fill out. Work through the steps against it. |
+| **Starter code** | [starter zip file](./assets/bikeshare-open-starter.zip) — the reference repo to start with placeholders you will need to fill out. Work through the steps against it. |
 | **What you submit** | One git repository built on the starter: the starter as its first commit, plus the files listed under **What you submit** in Part 5: a `REPORT.md`, a new feature with its test, `docs/SEEDED_FAULTS.md`, `docs/AUDIT.md`, a skill of your own, and the committed metrics and audit output. |
 
 ## Lesson outline
