@@ -144,12 +144,12 @@ This site is under construction! -->
             <td colspan=2><a href="assignments/methodology/06">Environments and Containerization (MA 5 due Nov 16th)</a></td>
             <td></td>
         </tr>
-        <!--
         <tr>
-            <td>7</td>
-            <td colspan=2><a href="assignments/methodology/07/">Agentic Programming (MA 5 due Nov 16th)</a></td>
-            <td></td>
+            <td>8</td>
+            <td colspan=2><a href="assignments/methodology/07-open/">Agentic Programming (MA 6 due Nov 23rd)</a></td>
+            <td>TA Checkin for Weeks 8/9</td>
         </tr>
+        <!--
         <tr>
             <td>8</td>
             <td><a href="lessons/05">Ethics and Values</a><br><small>by Prof. David Danks</small></td>
