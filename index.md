@@ -147,7 +147,7 @@ This site is under construction! -->
         <tr>
             <td>8</td>
             <td colspan=2><a href="assignments/methodology/07-open/">Agentic Programming (MA 6 due Nov 23rd)</a></td>
-            <td>TA Checkin for Weeks 8/9</td>
+            <td>TA Checkin for Weeks 8/9. Be ready to pitch your proposal for the Q2 project.</td>
         </tr>
         <!--
         <tr>
