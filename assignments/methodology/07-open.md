@@ -64,6 +64,8 @@ The agent is Claude Code, the harness, driving an **open-weight model running on
 - Reproducibility: seeds, pinned versions, and a pipeline that runs from one command.  
 - Whether the question is worth asking, and whether the answer is believable.
 
+The code in this assignment was vibe coded using Claude Fable 5.1
+
 ## Part 1 · Why methodology changes
 
 Writing the code used to be the slow step. That constraint quietly enforced a lot of methodology: you did not try forty feature sets because forty feature sets was a lot of work. That constraint is gone. An agent will try forty feature sets in an afternoon. What it will not do is notice that thirty-nine of them were invalid for a reason nobody wrote down. The bottleneck has moved from *producing* analysis to *trusting* it. Everything in this lesson follows from this.
