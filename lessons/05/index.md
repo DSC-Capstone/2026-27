@@ -11,10 +11,10 @@ nav_exclude: true
 # Ethics and Values
 {:.no_toc}
 
-Make sure to read this article before moving on to [Methodology Assignment 6](https://dsc-capstone.org/2025-26/assignments/methodology/03), which is due on Sunday, November 24th.
+Make sure to read this article before moving on to [Methodology Assignment 7](https://dsc-capstone.org/2026-27/assignments/methodology/03), which is due on Monday, November 30th.
 
 {: .green }
-**This lesson was prepared by [Professor David Danks](https://www.daviddanks.org), who is jointly appointed in Data Science and Philosophy. All project groups will be required to follow up on this lesson during Quarter 2 to reflect on how the concepts and ideas below apply to their projects.**
+**This lesson was prepared by [Professor David Danks](https://www.daviddanks.org). All project groups will be required to follow up on this lesson during Quarter 2 to reflect on how the concepts and ideas below apply to their projects.**
 
 ---
 
