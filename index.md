@@ -149,23 +149,22 @@ This site is under construction! -->
             <td colspan=2><a href="assignments/methodology/07-open/">Agentic Programming (MA 6 due Nov 23rd)</a></td>
             <td>TA Checkin for Weeks 8/9. Be ready to pitch your proposal for the Q2 project.</td>
         </tr>
-        <!--
         <tr>
-            <td>8</td>
+            <td>9</td>
             <td><a href="lessons/05">Ethics and Values</a><br><small>by Prof. David Danks</small></td>
-            <td><a href="assignments/methodology/03">MA 6 (due Nov. 24th)</a></td>
-            <td>Remember to sign up for and attend the final TA Checkin</td>
+            <td><a href="assignments/methodology/03">MA 7 (due Nov. 30th)</a></td>
+            <td>Remember that final submissions for Q1 project and Q2 proposal are due by Dec 4th</td>
         </tr>
         <tr>
             <td>9</td>
             <td><a href="lessons/09">Project Management</a></td>
-            <td><a href="assignments/projects/q1-week-9-10-checkin">Week 8/9 TA Check-In</a></td>
-            <td>Work on your Q1 project and Q2 project proposal (Due by Dec 5th)</td>
+            <td</td>
+            <td>Work on your Q1 project and Q2 project proposal (Due by Dec 4th)</td>
         </tr>
         <tr>
             <td>10</td>
             <td>No lesson.</td>
-            <td colspan=3><b><p style="color: red">Submit your Q1 project as well as the Q2 project proposal (By 11.59pm, Friday, Dec 5th)</p></b></td>
+            <td colspan=3><b><p style="color: red">Submit your Q1 project as well as the Q2 project proposal (By 11.59pm, Friday, Dec 4th)</p></b></td>
         </tr>
         -->
     </tbody>
