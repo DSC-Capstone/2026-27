@@ -4,9 +4,6 @@ title: 🏡 Home
 nav_order: 1
 ---
 
-<!-- {: .warning }
-This site is under construction! -->
-
 # {{ site.tagline }}
 {: .mb-4 }
 {{ site.description }}
@@ -166,7 +163,6 @@ This site is under construction! -->
             <td>No lesson.</td>
             <td colspan=3><b><p style="color: red">Submit your Q1 project as well as the Q2 project proposal (By 11.59pm, Friday, Dec 4th)</p></b></td>
         </tr>
-        -->
     </tbody>
 </table>
 ---
