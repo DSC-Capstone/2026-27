@@ -155,13 +155,13 @@ nav_order: 1
         <tr>
             <td>9</td>
             <td><a href="lessons/09">Project Management</a></td>
-            <td</td>
+            <td></td>
             <td>Work on your Q1 project and Q2 project proposal (Due by Dec 4th)</td>
         </tr>
         <tr>
             <td>10</td>
             <td>No lesson.</td>
-            <td colspan=3><b><p style="color: red">Submit your Q1 project as well as the Q2 project proposal (By 11.59pm, Friday, Dec 4th)</p></b></td>
+            <td colspan=2><b><p style="color: red">Submit your Q1 project as well as the Q2 project proposal (By 11.59pm, Friday, Dec 4th)</p></b></td>
         </tr>
     </tbody>
 </table>
